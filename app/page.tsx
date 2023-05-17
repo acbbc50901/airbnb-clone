@@ -1,10 +1,12 @@
+
+
 import ClientOnly from './components/ClientOnly'
 import Container from './components/Container'
 import EmptyState from './components/EmptyState';
 import getListings, { IListingParms } from './actions/getListing';
 import ListingCard from './components/listings/ListingCard';
 import getCurrentUser from './actions/getCurrentUser';
-export const dynamic = 'auto';
+export const dynamic = 'force-dynamic'
 interface Props {
   searchParams: IListingParms,
 }
