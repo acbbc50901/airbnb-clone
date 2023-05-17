@@ -9,7 +9,7 @@ import RentModal from './components/modal/RentModal'
 import SearchModal from './components/modal/SearchModal'
 import getCurrentUser from './actions/getCurrentUser'
 const inter = Inter({ subsets: ['latin'] })
-
+export const dynamic = 'auto';
 
 export const metadata = {
   title: 'airBnb Clors',

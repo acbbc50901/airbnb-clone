@@ -4,7 +4,7 @@ import EmptyState from './components/EmptyState';
 import getListings, { IListingParms } from './actions/getListing';
 import ListingCard from './components/listings/ListingCard';
 import getCurrentUser from './actions/getCurrentUser';
-
+export const dynamic = 'auto';
 interface Props {
   searchParams: IListingParms,
 }
