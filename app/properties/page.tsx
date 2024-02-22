@@ -11,7 +11,7 @@ const PropertiesPage = async () => {
   if (!currentUser) {
     return (
       <ClientOnly>
-        <EmptyState title="Undauthorized" subtitle="Pleace login"/>
+        <EmptyState title="並無此內容" subtitle="請先登入"/>
       </ClientOnly>
     )
   }
@@ -22,7 +22,7 @@ const PropertiesPage = async () => {
   if (listings.length === 0) {
     return (
       <ClientOnly>
-        <EmptyState title="No Properties found" subtitle="Looks like you have no Properties"/>
+        <EmptyState title="您似乎沒有上架任何房間" subtitle="看來您尚未在airbnb進行上架內容"/>
       </ClientOnly>
     )
   }

@@ -88,22 +88,22 @@ const SearchModal = () => {
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.INFO) {
-      return 'Search'
+      return '搜尋'
     }
 
-    return 'Next'
+    return '下一步'
   }, [step])
 
   const secondaryActionLabel = useMemo(() => {
     if (step === STEPS.LOCATION) {
       return undefined
     }
-    return 'Back'
+    return '上一步'
   }, [step])
 
   let bodyContent = (
     <div className='flex flex-col gap-8'>
-      <Heading title='Where do you wanna go?' subtitle='Find the perfect location!'/>
+      <Heading title='想去哪裡玩?' subtitle='找尋你想去的最佳地點!'/>
       <CountrySelect value={location} onChange={(value) => setLocation(value as CountrySelectValue)}/>
       <hr />
       <Map center={location?.latlng}/>
@@ -113,7 +113,7 @@ const SearchModal = () => {
   if (step === STEPS.DATE) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='Where do you plan to go?' subtitle='Make sure everyone is free!'/>
+        <Heading title='什麼時候開啟你的旅行?' subtitle='確認你任何時間都ＯＫ！'/>
         <Calendar value={dataRange} onChange={(value) => setDateRange(value.selection)}/>
     </div>
     )
@@ -121,17 +121,17 @@ const SearchModal = () => {
   if (step === STEPS.INFO) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='More information' subtitle='Find your perfect place!'/>
-        <Counter title='Guests' subtitle='How many guest are coming' vlaue={guestCount} onChange={(value) => setGuestCount(value)}/>
-        <Counter title='Rooms' subtitle='How many room do you need?' vlaue={roomCount} onChange={(value) => setRoomCount(value)}/>
-        <Counter title='Bathrooms' subtitle='How many bathrooms do you need?' vlaue={bathroomCount} onChange={(value) => setBathroomCount(value)}/>
+        <Heading title='詳細資訊' subtitle='找到屬於你的完美地點'/>
+        <Counter title='人數' subtitle='有多少人會一起入住?' vlaue={guestCount} onChange={(value) => setGuestCount(value)}/>
+        <Counter title='房間' subtitle='需要多少房間?' vlaue={roomCount} onChange={(value) => setRoomCount(value)}/>
+        <Counter title='浴室' subtitle='需要多少浴室?' vlaue={bathroomCount} onChange={(value) => setBathroomCount(value)}/>
     </div>
     )
   }
   return (
     <div>
       <Modal isOpen={searchModal.isOpen} onClose={searchModal.onClose} onSubmit={onSubmit} secondaryActionLabel={secondaryActionLabel}
-      secondaryAction={step === STEPS.LOCATION ? undefined : onBack} title='Filters' actionLabel={actionLabel} body={bodyContent}/>
+      secondaryAction={step === STEPS.LOCATION ? undefined : onBack} title='篩選' actionLabel={actionLabel} body={bodyContent}/>
     </div>
   )
 }

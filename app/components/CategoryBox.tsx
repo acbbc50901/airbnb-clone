@@ -16,7 +16,6 @@ const CategoryBox: React.FC<Props> = ({label, icon: Icon, selected}) => {
 
   const handleClick = useCallback(() => {
     let currentQuery = {};
-    console.log('hi');
     if (params) {
       currentQuery = qs.parse(params.toString());
     }

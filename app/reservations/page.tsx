@@ -12,7 +12,7 @@ const ReservationsPage = async () => {
   if (!currentUser) {
     return(
       <ClientOnly>
-        <EmptyState title='Unauthorized' subtitle='Please Login'/>
+        <EmptyState title='並無權限' subtitle='請先登入'/>
       </ClientOnly>
     )
   }
@@ -23,7 +23,7 @@ const ReservationsPage = async () => {
   if (reservations.length === 0) {
     return(
       <ClientOnly>
-        <EmptyState title='No reservations found' subtitle='Looks like you have no reservations on your prop'/>
+        <EmptyState title='並無找到預定行程' subtitle='您似乎沒有預定的行程'/>
       </ClientOnly>
     )
   }

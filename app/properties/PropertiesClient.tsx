@@ -35,12 +35,12 @@ const PropertiesClient: React.FC<Props> = ({listings, currentUser}) => {
 
   return (
     <Container>
-      <Heading title='Properties' subtitle="List of ypur properties"/>
+      <Heading title='房間資產' subtitle="下列是您的坊間資產"/>
       <div className=' mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
         {
           listings.map((item) => (
             <ListingCard key={item.id} data={item}  actionId={item.id} onAction={onCancel} disabled={deletingId === item.id}
-              actionLabel='Delete property' currentUser={currentUser}/>
+              actionLabel='刪除這套房' currentUser={currentUser}/>
           ))
         }
       </div>

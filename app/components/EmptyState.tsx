@@ -11,7 +11,7 @@ interface Props {
   showReset?: boolean
 }
 
-const EmptyState: React.FC<Props> = ({title = 'No exact matches', subtitle = 'Try changing or removing some of your filters', showReset}) => {
+const EmptyState: React.FC<Props> = ({title = '查無任何房型', subtitle = '請更改你的篩選條件', showReset}) => {
   const router = useRouter();
   
   return (
@@ -19,7 +19,7 @@ const EmptyState: React.FC<Props> = ({title = 'No exact matches', subtitle = 'Tr
       <Heading title={title} subtitle={subtitle} center/>
       <div className=' w-48 mt-4'>
         {showReset && (
-          <Button outline label='Remove all filters' onClick={() => router.push('/')}/>
+          <Button outline label='清除任何條件' onClick={() => router.push('/')}/>
         )}
       </div>
     </div>

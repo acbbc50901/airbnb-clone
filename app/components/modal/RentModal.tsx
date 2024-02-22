@@ -94,22 +94,22 @@ const RentModal = () => {
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.PRICE) {
-      return 'Create'
+      return '創立'
     }
 
-    return 'Next'
+    return '下一步'
   }, [step])
 
   const secondaryActionLabel = useMemo(() => {
     if (step === STEPS.CATEGORY) {
       return undefined
     }
-    return 'Back'
+    return '上一步'
   }, [step])
 
   let bodyContent = (
     <div className='flex flex-col gap-8'>
-      <Heading title='Which of these best describes ypur place?' subtitle='Pick a category'/>
+      <Heading title='哪個種類最適合你的房間特色?' subtitle='選擇你的類型'/>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto'>
         {
           categories.map((item) => (
@@ -130,7 +130,7 @@ const RentModal = () => {
   if (step === STEPS.LOCATION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='Where is your place located?' subtitle='Help guests find you!'/>
+        <Heading title='你的房間座落於哪個國家呢?' subtitle='幫助大家搜尋到你的房間!'/>
         <CountrySelect  onChange={(value) => setCustomValue('location', value)} value={location}/>
         <Map center={location?.latlng}/>
       </div>
@@ -139,19 +139,19 @@ const RentModal = () => {
   if (step === STEPS.INFO) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='Share some basics about your place' subtitle='What amenities do you have?'></Heading>
-        <Counter title='Guests' subtitle='How many guests do you allow?' vlaue={guestCount} onChange={(value) => setCustomValue('guestCount', value)}/>
+        <Heading title='房間的詳細內容' subtitle='你有什麼'></Heading>
+        <Counter title='人數' subtitle='你可以入住多少人?' vlaue={guestCount} onChange={(value) => setCustomValue('guestCount', value)}/>
         <hr />
-        <Counter title='Rooms' subtitle='How many rooms do you have?' vlaue={roomCount} onChange={(value) => setCustomValue('roomCount', value)}/>
+        <Counter title='房間' subtitle='你有多少房間?' vlaue={roomCount} onChange={(value) => setCustomValue('roomCount', value)}/>
         <hr />
-        <Counter title='Bathrooms' subtitle='How many bathrooms do you have?' vlaue={bathroomCount} onChange={(value) => setCustomValue('bathroomCount', value)}/>
+        <Counter title='廁所' subtitle='你有多少廁所?' vlaue={bathroomCount} onChange={(value) => setCustomValue('bathroomCount', value)}/>
       </div>
     )
   }
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='Add a photo of your place' subtitle='Show guests what your place looks like?'></Heading>
+        <Heading title='為你的房間加入封面照' subtitle='讓大家看看你的房間'></Heading>
         <ImageUpload value={imageSrc} onChange={(value) => setCustomValue('imageSrc', value)}/>
       </div>
     )
@@ -159,23 +159,23 @@ const RentModal = () => {
   if (step === STEPS.DESCRIPTION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='How would you describe your place?' subtitle='Short and sweet works best!'></Heading>
-        <Input id='title' label='Title' disabled={isLoading} register={register} errors={errors} required/>
+        <Heading title='房間的標題' subtitle='介紹你完美的房間!'></Heading>
+        <Input id='title' label='標題' disabled={isLoading} register={register} errors={errors} required/>
         <hr />
-        <Input id='description' label='description' disabled={isLoading} register={register} errors={errors} required/>
+        <Input id='description' label='內容介紹' disabled={isLoading} register={register} errors={errors} required/>
       </div>
     )
   }
   if (step === STEPS.PRICE) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='How would you describe your place?' subtitle='Short and sweet works best!'></Heading>
-        <Input id='price' label='Price' formatPrice type='number' disabled={isLoading} register={register} errors={errors} required/>
+        <Heading title='你的房間一天要多少?' subtitle='自訂金額!'></Heading>
+        <Input id='price' label='價格' formatPrice type='number' disabled={isLoading} register={register} errors={errors} required/>
       </div>
     )
   }
   return (
-    <Modal title='Airbnb your home' isOpen={rentModal.isOpen} onClose={rentModal.onClose} onSubmit={handleSubmit(onSubmit)} body={bodyContent}
+    <Modal title='上架你的Airbnb房間' isOpen={rentModal.isOpen} onClose={rentModal.onClose} onSubmit={handleSubmit(onSubmit)} body={bodyContent}
       secondaryActionLabel={secondaryActionLabel} secondaryAction={step === STEPS.CATEGORY ? undefined : onBack} actionLabel={actionLabel}/>
   )
 }

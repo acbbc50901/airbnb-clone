@@ -22,7 +22,7 @@ const TripsPage = async () => {
   if (reservations.length === 0) {
     return (
       <ClientOnly>
-        <EmptyState title="No trips found" subtitle="Looks like you havent reserved any trips"/>
+        <EmptyState title="沒旅行行程" subtitle="看看有沒有你喜歡的行程"/>
       </ClientOnly>
     )
   }

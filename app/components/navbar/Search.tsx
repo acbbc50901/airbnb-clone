@@ -23,7 +23,7 @@ const Search = () => {
     if (locationValue) {
       return getByValue(locationValue as string)?.label
     }
-    return 'Anywhere'
+    return '任何地點'
   }, [locationValue, getByValue])
 
   const durationLabel = useMemo(() => {
@@ -37,14 +37,14 @@ const Search = () => {
       }
       return `${diff} Day`
     }
-    return 'Any Week'
+    return '任何一週'
   }, [startDate, endDate])
   
   const guestLabel = useMemo(() => {
     if (guestCount) {
-      return `${guestCount} Guests`
+      return `${guestCount} 人數`
     }
-    return 'Add Guests'
+    return '人數'
   }, [guestCount])
 
   return (

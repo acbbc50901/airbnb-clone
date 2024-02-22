@@ -8,6 +8,8 @@ import LoginModal from './components/modal/LoginModal'
 import RentModal from './components/modal/RentModal'
 import SearchModal from './components/modal/SearchModal'
 import getCurrentUser from './actions/getCurrentUser'
+import { Suspense } from 'react'
+import Loading from './loading'
 const inter = Inter({ subsets: ['latin'] })
 export const dynamic = 'force-dynamic'
 export const metadata = {
@@ -34,7 +36,9 @@ export default async function RootLayout({
             <Navbar currentUser={currentUser}/>
           </ClientOnly>
           <div className='pb-20 pt-28'>
-            {children}
+            <Suspense fallback={<Loading/>}>
+              {children}
+            </Suspense>
           </div>
       </body>
     </html>

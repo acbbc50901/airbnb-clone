@@ -37,12 +37,12 @@ const ReservationsClient: React.FC<Props> = ({reservations, currentUser}) => {
 
   return (
     <Container>
-      <Heading title='Reservations' subtitle='Bookings on your properties'/>
+      <Heading title='行程' subtitle='您的預計行程如下'/>
       <div className=' mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
       {
         reservations.map((item) => (
           <ListingCard key={item.id} data={item.listing} reservation={item} actionId={item.id} onAction={onCancel} disabled={deletingId === item.id}
-            actionLabel='Cancel guest reservation' currentUser={currentUser}/>
+            actionLabel='取消你預定的行程' currentUser={currentUser}/>
           ))
       }
       </div>

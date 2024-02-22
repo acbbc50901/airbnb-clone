@@ -54,27 +54,27 @@ const LoginModal = () => {
 
   const bodyContent = (
     <div className='flex flex-col gap-4'>
-      <Heading title='Welcome back' subtitle='Login to your account!'/>
-      <Input id='email' label='Email' disabled={isLoading} register={register} errors={errors} required/>
-      <Input id='password' label='Password' type='password' disabled={isLoading} register={register} errors={errors} required/>
+      <Heading title='歡迎回來' subtitle='登入您的帳號'/>
+      <Input id='email' label='信箱' disabled={isLoading} register={register} errors={errors} required/>
+      <Input id='password' label='密碼' type='password' disabled={isLoading} register={register} errors={errors} required/>
     </div>
   )
   const footerContent = (
     <div className='flex flex-col gap-4 mt-3'>
       <hr />
-      <Button outline label='Continu whit Google' Icon={FcGoogle} onClick={() => signIn('google')}/>
-      <Button outline label='Continu whit Github' Icon={ AiFillGithub } onClick={() => signIn('github')}/>
+      <Button outline label='使用Google登入' Icon={FcGoogle} onClick={() => signIn('google')}/>
+      <Button outline label='使用Github登入' Icon={ AiFillGithub } onClick={() => signIn('github')}/>
       <div className=' text-neutral-500 text-center my-4 font-light'>
         <div className='flex flex-row items-center gap-2 justify-center'>
-          <div>First time using Airbnb</div>
-          <div onClick={toggle} className=' text-neutral-800 cursor-pointer hover:underline'>Create an account</div>
+          <div>第一次使用Airbnb?</div>
+          <div onClick={toggle} className=' text-neutral-800 cursor-pointer hover:underline'>創立一個屬於你的帳號</div>
         </div>
       </div>
     </div>
   )
 
   return (
-    <Modal disabled={isLoading} isOpen={loginModal.isOpen} title='Login' actionLabel='Continue' onClose={loginModal.onClose} onSubmit={handleSubmit(onSubmit)}
+    <Modal disabled={isLoading} isOpen={loginModal.isOpen} title='登入' actionLabel='登入' onClose={loginModal.onClose} onSubmit={handleSubmit(onSubmit)}
     body={bodyContent} footer={footerContent}/>
   )
 }

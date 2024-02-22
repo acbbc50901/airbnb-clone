@@ -48,28 +48,28 @@ const RegisterModal = () => {
   }, [loginModal, registerModal])
   const bodyContent = (
     <div className='flex flex-col gap-4'>
-      <Heading title='Welcome to Airbnb' subtitle='Create an account!'/>
-      <Input id='email' label='Email' disabled={isLoading} register={register} errors={errors} required/>
-      <Input id='name' label='Name' disabled={isLoading} register={register} errors={errors} required/>
-      <Input id='password' label='Password' type='password' disabled={isLoading} register={register} errors={errors} required/>
+      <Heading title='歡迎來到Airbnb' subtitle='創立一個帳號'/>
+      <Input id='email' label='信箱' disabled={isLoading} register={register} errors={errors} required/>
+      <Input id='name' label='名稱' disabled={isLoading} register={register} errors={errors} required/>
+      <Input id='password' label='密碼' type='password' disabled={isLoading} register={register} errors={errors} required/>
     </div>
   )
   const footerContent = (
     <div className='flex flex-col gap-4 mt-3'>
       <hr />
-      <Button outline label='Continu whit Google' Icon={FcGoogle} onClick={() => signIn('google')}/>
-      <Button outline label='Continu whit Github' Icon={ AiFillGithub } onClick={() => signIn('github')}/>
+      <Button outline label='使用Google進行註冊' Icon={FcGoogle} onClick={() => signIn('google')}/>
+      <Button outline label='使用Github進行註冊' Icon={ AiFillGithub } onClick={() => signIn('github')}/>
       <div className=' text-neutral-500 text-center my-4 font-light'>
         <div className='flex flex-row items-center gap-2 justify-center'>
-          <div>Already have an account?</div>
-          <div onClick={toggle} className=' text-neutral-800 cursor-pointer hover:underline'>Log in</div>
+          <div>之前有辦過帳號了？</div>
+          <div onClick={toggle} className=' text-neutral-800 cursor-pointer hover:underline'>登入</div>
         </div>
       </div>
     </div>
   )
 
   return (
-    <Modal disabled={isLoading} isOpen={registerModal.isOpen} title='Register' actionLabel='Continue' onClose={registerModal.onClose} onSubmit={handleSubmit(onSubmit)}
+    <Modal disabled={isLoading} isOpen={registerModal.isOpen} title='註冊' actionLabel='註冊' onClose={registerModal.onClose} onSubmit={handleSubmit(onSubmit)}
     body={bodyContent} footer={footerContent}/>
   )
 }

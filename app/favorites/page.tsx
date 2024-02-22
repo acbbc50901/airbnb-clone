@@ -14,7 +14,7 @@ const ListingPage = async () => {
   if (listings.length === 0) {
     return (
       <ClientOnly>
-        <EmptyState title='No favorites found' subtitle='Looks like you have no favorites '/>
+        <EmptyState title='並無最愛' subtitle='新增你的最愛內容'/>
       </ClientOnly>
     )
   }
