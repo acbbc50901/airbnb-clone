@@ -9,7 +9,7 @@ import RentModal from './components/modal/RentModal'
 import SearchModal from './components/modal/SearchModal'
 import getCurrentUser from './actions/getCurrentUser'
 import { Suspense } from 'react'
-import Loading from './loading'
+import Loading from './Loading'
 const inter = Inter({ subsets: ['latin'] })
 export const dynamic = 'force-dynamic'
 export const metadata = {
